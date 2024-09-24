@@ -90,7 +90,7 @@ For setup instructions, see [Setup Guide](SETUP.md).
 ## File Structure
 
 ```
-image-generator-app/
+Image-Generator/
 .
 ├── Dockerfile                   # Dockerfile for building the image
 ├── Makefile                     # Commands related to the application
