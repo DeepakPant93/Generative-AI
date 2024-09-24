@@ -67,7 +67,7 @@ Follow these steps to set up YogaGPT in your own Discord server:
    https://discord.com/oauth2/authorize?client_id=1287832751357165569&permissions=66624&integration_type=0&scope=bot
    ```
 
-   6. **Run the bot using Docker**:
+6. **Run the bot using Docker**:
 
    Start the bot using Docker.
 
@@ -79,7 +79,7 @@ Follow these steps to set up YogaGPT in your own Discord server:
      -e OPENAI_API_KEY=your_openai_api_key \
      deepak93p/yoga-gpt:latest
       ```
-
+For setup instructions, see [Setup Guide](SETUP.md).
 
 ## Usage
 
