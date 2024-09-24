@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DALL-E Image Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        body {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .spin {
+            animation: spin 1s linear infinite;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div class="container mx-auto p-8 glass-effect">
+        <h1 class="text-4xl font-bold mb-8 text-center text-white">DALL-E Image Generator</h1>
+        <form id="promptForm" class="mb-8">
+            <input type="text" id="promptInput" placeholder="Enter your prompt" class="w-full p-4 border rounded-lg mb-4 bg-white bg-opacity-50" required>
+            <button type="submit" class="w-full bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition duration-300">Generate Images</button>
+        </form>
+        <div id="loader" class="hidden flex justify-center items-center">
+            <div class="w-16 h-16 border-t-4 border-white rounded-full spin"></div>
+        </div>
+        <div id="imageContainer" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('promptForm');
+        const loader = document.getElementById('loader');
+        const imageContainer = document.getElementById('imageContainer');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const prompt = document.getElementById('promptInput').value;
+
+            loader.classList.remove('hidden');
+            imageContainer.innerHTML = '';
+
+            try {
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `prompt=${encodeURIComponent(prompt)}`,
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    data.images.forEach((url, index) => {
+                        const imgWrapper = document.createElement('div');
+                        imgWrapper.className = 'relative fade-in';
+
+                        const img = document.createElement('img');
+                        img.src = url;
+                        img.alt = `Generated image ${index + 1}`;
+                        img.className = 'w-full h-auto rounded-lg shadow-md';
+
+                        const downloadBtn = document.createElement('a');
+                        downloadBtn.href = url;
+                        downloadBtn.download = `generated-image-${index + 1}.jpg`;
+                        downloadBtn.className = 'absolute bottom-4 right-4 bg-white text-blue-500 px-4 py-2 rounded-full shadow-md hover:bg-blue-100 transition duration-300';
+                        downloadBtn.textContent = 'View';
+
+                        imgWrapper.appendChild(img);
+                        imgWrapper.appendChild(downloadBtn);
+                        imageContainer.appendChild(imgWrapper);
+                    });
+                } else {
+                    throw new Error(data.error);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while generating images. Please try again.');
+            } finally {
+                loader.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
