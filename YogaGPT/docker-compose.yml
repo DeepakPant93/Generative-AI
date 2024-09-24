@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  yoga-gpt:
+    image: deepak93p/yoga-gpt:latest
+    pull_policy: always
+    environment:
+      - NAME=yoga-gpt
+      - DISCORD_BOT_TOKEN=your_discord_bot_token
+      - OPENAI_API_KEY=your_openai_api_key
