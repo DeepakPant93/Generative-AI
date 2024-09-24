@@ -66,6 +66,20 @@ Before you start, make sure you have the following installed on your system:
     http://localhost:8080
     ```
 
+6. **Run the bot using Docker**:
+
+   Start the bot using Docker.
+
+    ```bash
+    docker run -d \
+     --name image-generator \
+     -e NAME=image-generator \
+     -e OPENAI_API_KEY=your_openai_api_key \
+     deepak93p/image-generator:latest
+      ```
+For setup instructions, see [Setup Guide](SETUP.md).
+
+
 ## How to Use
 
 1. After navigating to the app in your browser, you will see a text box where you can enter a prompt.
