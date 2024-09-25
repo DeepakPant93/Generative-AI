@@ -24,9 +24,9 @@ First things first, you need to create your own Discord server where your bot wi
    
    Once your server is set up, your bot will be able to join and interact with users here!
 
-<img src="./images/create_discord_server-1.png" alt="Create Discord Server" width="300" height="300" />
-<img src="./images/create_discord_server-2.png" alt="Create Discord Server" width="300" height="300" />
-<img src="./images/create_discord_server-3.png" alt="Create Discord Server" width="300" height="300" />
+<img src="./images/create_discord_server-1.jpeg" alt="Create Discord Server" width="300" height="300" />
+<img src="./images/create_discord_server-2.jpeg" alt="Create Discord Server" width="300" height="300" />
+<img src="./images/create_discord_server-3.jpeg" alt="Create Discord Server" width="300" height="300" />
 
 ---
 
@@ -55,19 +55,17 @@ Next, we’ll create the bot that will live in your server.
 
 ###### Bot Privileges Gateway Intents
 
-<img src="./images/bot_permission-1.png" alt="BOT permissions" width="300" height="300" />
-<img src="./images/bot_permission-2.png" alt="BOT permissions" width="300" height="300" />
-<img src="./images/bot_permission-3.png" alt="BOT permissions" width="300" height="300" />
+<img src="./images/bot_permission-1.jpeg" alt="BOT permissions" width="300" height="300" />
+<img src="./images/bot_permission-2.jpeg" alt="BOT permissions" width="300" height="300" />
 
 ###### Bot Permissions
 
-<img src="./images/bot_permission-4.png" alt="BOT permissions" width="300" height="300" />
-<img src="./images/bot_permission-5.png" alt="BOT permissions" width="300" height="300" />
-<img src="./images/bot_permission-6.png" alt="BOT permissions" width="300" height="300" />
+<img src="./images/bot_permission-3.jpeg" alt="BOT permissions" width="300" height="300" />
+<img src="./images/bot_permission-4.jpeg" alt="BOT permissions" width="300" height="300" />
 
 ###### Bot URL
 
-<img src="./images/bot_permission-7.png" alt="BOT permissions" width="300" height="300" />
+<img src="./images/bot_permission-5.jpeg" alt="BOT permissions" width="300" height="300" />
 
 ---
 
@@ -79,8 +77,8 @@ Now, let's connect your bot with ChatGPT by using OpenAI's API.
 2. Sign in or create an account.
 3. **Generate a new API key** and save it securely as you'll need it later when writing the bot's code.
 
-<img src="./images/openai_api_key-1.png" alt="Open AI API Key" width="300" height="300" />
-<img src="./images/openai_api_key-1.png" alt="Open AI API Key" width="300" height="300" />
+<img src="./images/openai_api_key-1.jpeg" alt="Open AI API Key" width="300" height="300" />
+<img src="./images/openai_api_key-1.jpeg" alt="Open AI API Key" width="300" height="300" />
 
 ---
 
