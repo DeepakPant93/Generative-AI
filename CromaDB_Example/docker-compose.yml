@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  chromadb:
+    image: chromadb/chroma
+    ports:
+      - "8000:8000"
+    environment:
+      CHROMA_SERVER_AUTH_CREDENTIALS_PROVIDER: "chromadb.auth.token.TokenConfigServerAuthCredentialsProvider"
+      CHROMA_SERVER_AUTH_PROVIDER: "chromadb.auth.token.TokenAuthServerProvider"
+      CHROMA_SERVER_AUTH_CREDENTIALS: ${CHROMA_CLIENT_AUTH_CREDENTIALS}
+      CHROMA_SERVER_AUTH_TOKEN_TRANSPORT_HEADER: "X_CHROMA_TOKEN"
+    volumes:
+      - .data/chroma/:/chroma/chroma
