@@ -4,32 +4,32 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Easy Document Upload',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Simply upload your documents, PDFs, or text files to create your knowledge base.
+        AskDocsGPT processes and indexes your content automatically.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Natural Language Queries',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Ask questions in plain English about your documentation.
+        No need for complex search queries - just ask naturally, and get precise answers.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'AI-Powered Responses',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Powered by advanced AI, AskDocsGPT provides context-aware answers
+        with direct references to your source documentation.
       </>
     ),
   },

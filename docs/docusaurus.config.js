@@ -1,34 +1,20 @@
-// @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
-
 import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Docs1',
-  tagline: 'Documentation is cool',
+  title: 'AskDocsGPT',
+  tagline: 'Your Documentation Assistant',
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here
   url: 'https://DeepakPant93.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/Generative-AI/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'DeepakPant93', // Usually your GitHub org/user name.
-  projectName: 'Generative-AI', // Usually your repo name.
+  organizationName: 'DeepakPant93',
+  projectName: 'Generative-AI',
 
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'ignore',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -41,10 +27,6 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
@@ -52,11 +34,6 @@ const config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -71,10 +48,19 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },
+      colorMode: {
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'AskDocsGPT',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -86,9 +72,8 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/DeepakPant93/Generative-AI',
             label: 'GitHub',
             position: 'right',
           },
@@ -96,62 +81,33 @@ const config = {
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Deepak, Inc. Built with Docusaurus.`,
       },
+//      algolia: {
+//        appId: 'VAU016LAWS',
+//        apiKey: '6c01842d6a88772ed2236b9c85806441', // Search-only API key
+//        indexName: 'askdocsgpt',
+//        contextualSearch: true,
+//        searchParameters: {
+//          facetFilters: ['language:en'],
+//        },
+//        // Optional: Replace with 'false' if you don't want the search page
+//        searchPagePath: 'search',
+//      },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
     }),
 
-      // Enable Mermaid diagrams
   markdown: {
     mermaid: true,
   },
 
-  // Add the Mermaid theme plugin
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: [
+    '@docusaurus/theme-mermaid',
+//    '@docusaurus/theme-search-algolia'
+  ],
 };
 
 export default config;
