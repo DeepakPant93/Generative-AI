@@ -77,8 +77,6 @@ Before you start, make sure you have the following installed on your system:
      -e OPENAI_API_KEY=your_openai_api_key \
      deepak93p/image-generator:latest
       ```
-For setup instructions, see [Setup Guide](SETUP.md).
-
 
 ## How to Use
 

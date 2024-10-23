@@ -79,7 +79,6 @@ Follow these steps to set up YogaGPT in your own Discord server:
      -e OPENAI_API_KEY=your_openai_api_key \
      deepak93p/yoga-gpt:latest
       ```
-For setup instructions, see [Setup Guide](SETUP.md).
 
 ## Usage
 
