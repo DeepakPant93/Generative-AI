@@ -1,4 +1,0 @@
-flask==3.0.3
-discord==2.3.2
-openai==1.47.1
-python-dotenv==1.0.1
